@@ -264,4 +264,18 @@ body.dark-mode .highlight-cell {
 body:not(.home) main,
 body:not(.home) #main-content {
     padding-top: 80px; /* ajusta si tu navbar es más alto */
+
+}
+
+/* Solo tablas largas en pantallas pequeñas: scroll horizontal */
+@media (max-width: 768px) {
+  .table-wrapper {
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .table-wrapper table {
+    width: 100%;      /* se ajusta al contenedor sin romper diseño */
+    min-width: 600px; /* opcional: ancho mínimo para conservar estructura */
+  }
 }
