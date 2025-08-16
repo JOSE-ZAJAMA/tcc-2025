@@ -1,0 +1,267 @@
+/* ----- VARIABLES ----- */
+:root {
+  --bg-color: white;
+  --text-color: black;
+}
+
+/* ----- BASE ----- */
+body {    
+  margin: 0;
+  font-family: "Jost", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section {
+  padding: 2rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ----- NAVBAR ----- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Toggle de menú hamburguesa (☰) */
+#menu-toggle {
+  display: none;       /* se muestra solo en responsive */
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;         /* color por defecto (modo claro) */
+}
+
+/* Color en modo oscuro */
+.dark-mode #menu-toggle {
+  color: #fff;         /* blanco para que se vea sobre fondo oscuro */
+}
+
+main {
+  margin-top: 70px; /* espacio para que el navbar no tape contenido */
+}
+
+/* No margen extra en index */
+body.home main,
+body.home #main-content {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* ----- PORTADA FULLSCREEN ----- */
+.fullscreen {
+  height: 100vh;
+  background: url('images/slava-auchynnikau-unsplash.jpg') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  color: white;
+}
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+/* ----- BOTONES ----- */
+button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffffffcc;
+  color: #000;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+
+/* ----- CREDIT ----- */
+.credit {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.credit a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+}
+
+.credit a:hover {
+  text-decoration: underline;
+}
+
+/* ----- DARK MODE ----- */
+.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+.dark-mode .navbar {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+.dark-mode .navbar a,
+.dark-mode a {
+  color: #66ccff;
+}
+
+.dark-mode footer {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  border-top: 1px solid #444;
+}
+
+.dark-mode footer a {
+  color: #66ccff;
+}
+
+/* ----- RESPONSIVE NAVBAR ----- */
+@media (max-width: 768px) {
+  #menu-toggle {
+      display: block;
+  }
+
+  .navbar ul {
+      flex-direction: column;
+      align-items: center;
+      display: none;
+      padding: 0;
+  }
+
+  .navbar ul.active {
+      display: flex;
+  }
+}
+
+/* ----- SECTION CONTENT ----- */
+.section p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+blockquote {
+  font-style: italic;
+  color: #555;
+  margin: 1rem 0;
+  padding-left: 1rem;
+  border-left: 3px solid #ccc;
+}
+
+/* ----- FOOTER ----- */
+footer {
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 2rem 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  border-top: 1px solid #ccc;
+}
+
+  /* table format */
+
+  /* Estilos por defecto para tablas (Modo Claro) */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #fff; /* Fondo blanco */
+    border: 1px solid #ccc; /* Borde gris claro */
+}
+
+th, td {
+    padding: 12px 15px;
+    border: 1px solid #ccc; /* Borde de celdas gris claro */
+    text-align: left;
+}
+
+th {
+    background-color: #e0e0e0; /* Fondo de encabezado gris */
+}
+
+/* Estilos para tablas en Modo Oscuro */
+body.dark-mode table {
+    background-color: #2c2c2c; /* Fondo de tabla más oscuro */
+    border: 1px solid #555; /* Borde de tabla más oscuro */
+}
+
+body.dark-mode th,
+body.dark-mode td {
+    border: 1px solid #555; /* Borde de celdas más oscuro */
+}
+
+body.dark-mode th {
+    background-color: #3a3a3a; /* Fondo de encabezado más oscuro */
+}
+
+/* Estilo para la celda resaltada en MODO CLARO */
+.highlight-cell {
+    background-color: #afacac; /* Un gris claro, por ejemplo */
+}
+
+/* Estilo para la celda resaltada en MODO OSCURO */
+body.dark-mode .highlight-cell {
+    background-color: #616161; /* Un gris oscuro que contraste con el fondo de la tabla oscura */
+}
+
+/*space betweenn navbar and titles */
+
+/* Separar contenido del navbar fijo */
+body:not(.home) main,
+body:not(.home) #main-content {
+    padding-top: 80px; /* ajusta si tu navbar es más alto */
+}
